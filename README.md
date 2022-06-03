@@ -8,9 +8,24 @@ A timed quiz on JavaScript fundamentals that records scores to compare against p
 
 make my first page layout with the HTML and CSS layouts etc.
 this is the start game button page
-when button is pressed it starts the timer count down funciton
+when button is pressed it starts the timer count down funciton and shows the first question
 
-Write the questions and answers.
+1.  create clickevent
+2.  function inside click event - this function removes the "start" page and places the html with the first question
+    -Example of questions structure. (an array of objects)
+    var questions = [
+    {
+    question: "bleh",
+    answer: "string",
+    options: ["boolean", "wrong", "adamswrong", "string"],
+    },
+    {
+    question: "bleh",
+    answer: "string",
+    options: ["boolean", "wrong", "adamswrong", "string"],
+    },
+    ]
+    Write the questions and answers.
 
 when the user selects the answers - a click event to happen with either correct or incorrect answers. (if else statment?)
 depending if correct then it is to cycle through the questions by replacing the html.
@@ -41,4 +56,6 @@ Deploy:
 
 # Commit notes:
 
-Commit 1: First notes on planning - and layed out the Readme file to track notes as I program. Created the HTML, Style, and Script files.
+Commit 1: First notes on planning - and laid out the Readme file to track notes as I program. Created the HTML, Style, and Script files.
+
+Commit 2: I turned the demo gif into a movie to help decifer the requirements. Added some more planning notes. Started to add the content in teh HTML for the nav (view links and timer) and the start page. Started to style the start page with CSS.
