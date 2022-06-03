@@ -56,6 +56,11 @@ Deploy:
 
 # Commit notes:
 
-Commit 1: First notes on planning - and laid out the Readme file to track notes as I program. Created the HTML, Style, and Script files.
+Commit 1:
+First notes on planning - and laid out the Readme file to track notes as I program. Created the HTML, Style, and Script files.
 
-Commit 2: I turned the demo gif into a movie to help decifer the requirements. Added some more planning notes. Started to add the content in teh HTML for the nav (view links and timer) and the start page. Started to style the start page with CSS.
+Commit 2:
+I turned the demo gif into a movie to help decifer the requirements. Added some more planning notes. Started to add the content in teh HTML for the nav (view links and timer) and the start page. Started to style the start page with CSS.
+
+Commit 3:
+Added an event listener onto the start button. Put the questions into an Array, then created a startQuestions function that replaces the innerHTML with the questions and answers in buttons. Only have the first question loaded.

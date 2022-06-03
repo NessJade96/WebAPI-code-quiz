@@ -1,11 +1,13 @@
 #startpage {
 	/* display: flex; */
 	text-align: center;
+	max-width: 600px;
+	margin: 0 auto;
 }
 
 #startpage h1 {
-	font-size: 2rem;
-	padding: 2rem;
+	font-size: 1.5rem;
+	padding: 1rem;
 }
 
 #startpage p {
@@ -34,4 +36,17 @@ button:hover {
 	background-color: rgb(173, 113, 204);
 	border-color: rgb(157, 71, 200);
 	cursor: pointer;
+}
+
+.questionButtons {
+	display: flex;
+	margin: 0.5rem;
+}
+
+#answersContainer {
+	padding: 0.5rem;
+}
+
+#askingQuestion {
+	text-align: left;
 }
