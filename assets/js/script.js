@@ -33,17 +33,35 @@ var questions = [
 
 startButton.addEventListener("click", startQuestions);
 
+function checkAnswer(event) {
+	var clickedButtonId = event.target.id;
+	if (clickedButtonId === questions[0].answer) {
+		console.log("correct");
+	} else {
+		console.log("incorrect");
+	}
+}
+
 function startQuestions() {
 	startPage.innerHTML =
 		"<h1 id=askingQuestion>" +
 		questions[0].question +
-		"</h1><div id=answersContainer><button id=buttonOne class=questionButtons>" +
-		questions[0].options[0] +
-		"</button><button id=buttonTwo class=questionButtons>" +
-		questions[0].options[1] +
-		"</button><button id=buttonThree class=questionButtons>" +
-		questions[0].options[2] +
-		"</button><button id=buttonFour class=questionButtons>" +
-		questions[0].options[3] +
-		"</button></div>";
+		"</h1><div id=answersContainer>" +
+		buttonOptions() +
+		"</div>";
+	var selectAllButtons = document.querySelectorAll(
+		"#answersContainer button"
+	);
+
+	for (var i = 0; i < selectAllButtons.length; i++) {
+		selectAllButtons[i].addEventListener("click", checkAnswer);
+	}
+}
+
+function buttonOptions(buttonNum, buttonAnswer) {
+	var html = "";
+	for (var i = 0; i < questions[0].options.length; i++) {
+		html += `<button type="button" id="${questions[0].options[i]}" class="questionButtons"> ${questions[0].options[i]} </button>`;
+	}
+	return html;
 }

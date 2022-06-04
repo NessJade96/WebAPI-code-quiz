@@ -30,7 +30,7 @@ when button is pressed it starts the timer count down funciton and shows the fir
 when the user selects the answers - a click event to happen with either correct or incorrect answers. (if else statment?)
 depending if correct then it is to cycle through the questions by replacing the html.
 also if it is correct a little "correct!" will appear below the question.
-maybe make a function per question, each question replaces the last question when the one priors click event is activated?
+make a function per question, each question replaces the last question when the one priors click event is activated?
 click event / function to reduce the timer by 10 seconds if answered incorrectly. penilty
 also "incorrect" will appear if the player answers a question wrong.
 
