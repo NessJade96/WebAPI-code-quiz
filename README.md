@@ -64,3 +64,9 @@ I turned the demo gif into a movie to help decifer the requirements. Added some 
 
 Commit 3:
 Added an event listener onto the start button. Put the questions into an Array, then created a startQuestions function that replaces the innerHTML with the questions and answers in buttons. Only have the first question loaded.
+
+Commit 4:
+The function buttonOptions was created to loop through and give the buttons on the screens content. I the created a function to check if the selected buttons answer is correct, this function runs inside an event listener click, and loops through to check all buttons.
+
+Commit 5:
+Adding comments to the script.js and style.css files. Added in the "correct" and "incorrect" text at the bottom of the questions. Made it call the startQuestions so if runs through all the questions. This works well, but at this stage now the correct answer isnt showing. Will save and come back to this.

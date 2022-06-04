@@ -1,5 +1,13 @@
+/*
+CSS DIRECTORY
+	1. =MAIN   
+	2. =NAV
+*/
+
+/*  ===============
+    MAIN 
+    =============== */
 #startpage {
-	/* display: flex; */
 	text-align: center;
 	max-width: 600px;
 	margin: 0 auto;
@@ -12,16 +20,6 @@
 
 #startpage p {
 	padding-bottom: 1rem;
-}
-
-nav {
-	display: flex;
-	justify-content: space-between;
-	padding: 1rem;
-}
-nav a {
-	text-decoration: none;
-	color: rgb(87, 39, 111);
 }
 
 button {
@@ -49,4 +47,24 @@ button:hover {
 
 #askingQuestion {
 	text-align: left;
+}
+
+#showAnswer {
+	color: gray;
+	font-style: italic;
+	margin: 0 auto;
+	max-width: 600px;
+}
+
+/*  ===============
+    NAV 
+    =============== */
+nav {
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem;
+}
+nav a {
+	text-decoration: none;
+	color: rgb(87, 39, 111);
 }

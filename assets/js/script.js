@@ -1,5 +1,10 @@
+// Creating variables to store elements from the HTML - these are then called throughout the code:
 var startButton = document.getElementById("startButton");
 var startPage = document.getElementById("startpage");
+var showAnswer = document.getElementById("showAnswer");
+var currentQuestion = 0;
+
+// This variable holds the questions and their answers:
 var questions = [
 	{
 		question: "Commonly used data types DO NOT include:",
@@ -31,37 +36,42 @@ var questions = [
 	},
 ];
 
+// This event listener triggers the start of all the functions and events to this site:
 startButton.addEventListener("click", startQuestions);
 
+// This function checks the elements ID of the button chosen, and will return true or false: ((might need to change this comment later))
 function checkAnswer(event) {
+	currentQuestion++;
 	var clickedButtonId = event.target.id;
-	if (clickedButtonId === questions[0].answer) {
-		console.log("correct");
+	if (clickedButtonId === questions[currentQuestion].answer) {
+		showAnswer.innerHTML = " <hr> Correct!";
 	} else {
-		console.log("incorrect");
+		showAnswer.innerHTML = " <hr> Incorrect!";
 	}
+	startQuestions();
 }
 
+// This function runs the questions and the funciton inside that then runs the button choices:
 function startQuestions() {
 	startPage.innerHTML =
 		"<h1 id=askingQuestion>" +
-		questions[0].question +
+		questions[currentQuestion].question +
 		"</h1><div id=answersContainer>" +
 		buttonOptions() +
 		"</div>";
 	var selectAllButtons = document.querySelectorAll(
 		"#answersContainer button"
 	);
-
 	for (var i = 0; i < selectAllButtons.length; i++) {
 		selectAllButtons[i].addEventListener("click", checkAnswer);
 	}
 }
 
+// This function as stated above runs the button choices of the question:
 function buttonOptions(buttonNum, buttonAnswer) {
 	var html = "";
-	for (var i = 0; i < questions[0].options.length; i++) {
-		html += `<button type="button" id="${questions[0].options[i]}" class="questionButtons"> ${questions[0].options[i]} </button>`;
+	for (var i = 0; i < questions[currentQuestion].options.length; i++) {
+		html += `<button type="button" id="${questions[currentQuestion].options[i]}" class="questionButtons"> ${questions[currentQuestion].options[i]} </button>`;
 	}
 	return html;
 }
