@@ -75,3 +75,12 @@ Commit 6:
 Debugged the incorrect/correct answer that was showing by moving down the "currentQuestion++;" part of my code to be below the if else statement. Made it so an if/else statments runs when the questions length in reached and it runs the enterHighScores page. Still need to work on the timer.
 
 Commit 7:
+Created an event listener to save the score locally when you click "submit".
+
+Commit 8:
+Created styling on the highscores page in css. The function showHighScores shows the initials on the leaderboard screen. Created the goBack button to refresh the page and takes you back to the start. Created the clearHighscores button to clear the locally stored data. Added the link viewHighScores to navigate to the leaderboard.
+
+to do:
+-timer
+-clear scoreboard
+-store multiple scores on leaderboard in order of lowest time, needs to number them.

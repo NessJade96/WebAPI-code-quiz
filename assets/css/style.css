@@ -89,3 +89,23 @@ nav a {
 #initials {
 	margin: 1rem;
 }
+
+#highscorePage {
+	background-color: rgb(216, 216, 237);
+	padding: 0.5rem;
+	font-weight: bold;
+	margin: 0 auto;
+}
+
+#clearHighScores {
+	margin: 1rem;
+}
+
+#leaderBoard {
+	text-align: left;
+	padding: 0;
+}
+
+#leaderBoard h1 {
+	padding: 1rem 0;
+}

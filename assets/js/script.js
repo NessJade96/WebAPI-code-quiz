@@ -1,5 +1,6 @@
 // Creating variables to store elements from the HTML - these are then called throughout the code:
 var startButton = document.getElementById("startButton");
+var viewHighScorePage = document.getElementById("viewHighScores");
 var startPage = document.getElementById("startpage");
 var showAnswer = document.getElementById("showAnswer");
 var currentQuestion = 0;
@@ -38,9 +39,25 @@ var questions = [
 
 // This event listener triggers the start of all the functions and events to this site:
 startButton.addEventListener("click", startQuestions);
+viewHighScores.addEventListener("click", showHighScores);
 
-// I NEED TO CREATE A VARIABLE THAT STORE THE REMAINING TIMER TO PUT INTO THE RECORDhIGHsCCORE FUNCTION//
+function showHighScores() {
+	var leaderboardInitials = localStorage.getItem("initials");
+	var leaderboardScore = localStorage.getItem("timeHighScore");
+	startPage.innerHTML =
+		"<article id='leaderBoard'><h1>Highscores</h1> <div id='highscorePage'>" +
+		leaderboardInitials +
+		leaderboardScore +
+		"</div><button type='button' name='goBack' id='goBack' onClick='window.location.reload();'>Go Back</button> <button type='button' name='clearHighscores' id='clearHighScores'>Clear Highscores</button></article>";
+	var clearHighScores = document.getElementById("clearHighScores");
+	clearHighScores.addEventListener("click", clearHighScoreTable);
+	function clearHighScoreTable() {
+		localStorage.clear();
+		showHighScores;
+	}
+}
 
+// I NEED TO CREATE A VARIABLE THAT STORE THE REMAINING TIMER TO PUT INTO THE RECORDhIGHsCCORE FUNCTION// timeHighScore variable
 // This event function is called when there are no more questions remaining - this will stop the timer and turn that into the score. The player can then store their high score:
 function recordHighScore() {
 	var timeHighScore = "20";
@@ -48,12 +65,15 @@ function recordHighScore() {
 		"<h1 class=allDone> All Done! <p class=allDone id=finalScore> Your final score is " +
 		timeHighScore +
 		"<p id=enterInitials>Enter initials:<input type='text' name='initials' id='initials'></input><button type=button id='submitScoreButton'>Submit</button><p>";
+
+	// This stores the score and initials into the local storage:
 	var submitScoreButton = document.getElementById("submitScoreButton");
 	submitScoreButton.addEventListener("click", saveScore);
 	function saveScore() {
 		var initials = document.querySelector("#initials").value;
 		localStorage.setItem("initials", initials);
 		localStorage.setItem("timeHighScore", timeHighScore);
+		showHighScores();
 	}
 }
 
