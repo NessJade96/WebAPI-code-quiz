@@ -72,4 +72,6 @@ Commit 5:
 Adding comments to the script.js and style.css files. Added in the "correct" and "incorrect" text at the bottom of the questions. Made it call the startQuestions so if runs through all the questions. This works well, but at this stage now the correct answer isnt showing. Will save and come back to this.
 
 Commit 6:
-Debugged the incorrect/correct answer that was showing by moving down the "currentQuestion++;" part of my code to be below the if else statement.
+Debugged the incorrect/correct answer that was showing by moving down the "currentQuestion++;" part of my code to be below the if else statement. Made it so an if/else statments runs when the questions length in reached and it runs the enterHighScores page. Still need to work on the timer.
+
+Commit 7:

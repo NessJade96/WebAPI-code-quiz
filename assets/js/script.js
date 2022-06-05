@@ -43,31 +43,19 @@ startButton.addEventListener("click", startQuestions);
 
 // This event function is called when there are no more questions remaining - this will stop the timer and turn that into the score. The player can then store their high score:
 function recordHighScore() {
-	var timeHighScore = 20;
+	var timeHighScore = "20";
 	startPage.innerHTML =
 		"<h1 class=allDone> All Done! <p class=allDone id=finalScore> Your final score is " +
 		timeHighScore +
-		"<p id=enterInitials>Enter initials:<input type='text' name='initials' id='initials'></input><button type=button ><p>";
+		"<p id=enterInitials>Enter initials:<input type='text' name='initials' id='initials'></input><button type=button id='submitScoreButton'>Submit</button><p>";
+	var submitScoreButton = document.getElementById("submitScoreButton");
+	submitScoreButton.addEventListener("click", saveScore);
+	function saveScore() {
+		var initials = document.querySelector("#initials").value;
+		localStorage.setItem("initials", initials);
+		localStorage.setItem("timeHighScore", timeHighScore);
+	}
 }
-
-// signUpButton.addEventListener("click", function(event) {
-//     event.preventDefault();
-
-//     var email = document.querySelector("#email").value;
-//     var password = document.querySelector("#password").value;
-
-//     if (email === "") {
-//       displayMessage("error", "Email cannot be blank");
-//     } else if (password === "") {
-//       displayMessage("error", "Password cannot be blank");
-//     } else {
-//       displayMessage("success", "Registered successfully");
-
-//       localStorage.setItem("email", email);
-//       localStorage.setItem("password", password);
-//       renderLastRegistered();
-//     }
-//   });
 
 // This function checks the elements ID of the button chosen, and will return correct or incorrect. Then restarts the startQuestions function.
 function checkAnswer(event) {
@@ -86,8 +74,9 @@ function checkAnswer(event) {
 			"#answersContainer button"
 		);
 		for (var i = 0; i < selectAllButtons.length; i++) {
-			selectAllButtons[i].addEventListener("click", recordHighScore);
+			recordHighScore(selectAllButtons[i]);
 		}
+		showAnswer.innerHTML = "";
 	}
 }
 
