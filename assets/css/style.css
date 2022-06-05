@@ -2,6 +2,7 @@
 CSS DIRECTORY
 	1. =MAIN   
 	2. =NAV
+    3. =HIGHSCORES
 */
 
 /*  ===============
@@ -67,4 +68,20 @@ nav {
 nav a {
 	text-decoration: none;
 	color: rgb(87, 39, 111);
+}
+
+/*  ===============
+    HIGHSCORES
+    =============== */
+.allDone {
+	text-align: left;
+}
+
+#finalScore {
+	padding: 1rem 0;
+	font-size: 1rem;
+}
+
+#enterInitials {
+	font-size: 1rem;
 }

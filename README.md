@@ -43,7 +43,7 @@ game over - the time left on the timer gets returned into the players "score".
 the player can then choose to save their score and input their initials.
 create a text field to help with this
 this will save on the local storage and does not get wiped if they refresh the page.
-There will be a button after submitting your highscore to 'go back' and take the quiz again.
+There will be a button after submitting your highscore to 'go back' and take the quiz again. Need to make the correct/incorrect disappear when onto the highscores page.
 
 View Highscores in the top left corner will take you to a page of all the locally stored high scores (showing initials and timer scores).
 
@@ -70,3 +70,6 @@ The function buttonOptions was created to loop through and give the buttons on t
 
 Commit 5:
 Adding comments to the script.js and style.css files. Added in the "correct" and "incorrect" text at the bottom of the questions. Made it call the startQuestions so if runs through all the questions. This works well, but at this stage now the correct answer isnt showing. Will save and come back to this.
+
+Commit 6:
+Debugged the incorrect/correct answer that was showing by moving down the "currentQuestion++;" part of my code to be below the if else statement.

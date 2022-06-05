@@ -39,16 +39,56 @@ var questions = [
 // This event listener triggers the start of all the functions and events to this site:
 startButton.addEventListener("click", startQuestions);
 
-// This function checks the elements ID of the button chosen, and will return true or false: ((might need to change this comment later))
+// I NEED TO CREATE A VARIABLE THAT STORE THE REMAINING TIMER TO PUT INTO THE RECORDhIGHsCCORE FUNCTION//
+
+// This event function is called when there are no more questions remaining - this will stop the timer and turn that into the score. The player can then store their high score:
+function recordHighScore() {
+	var timeHighScore = 20;
+	startPage.innerHTML =
+		"<h1 class=allDone> All Done! <p class=allDone id=finalScore> Your final score is " +
+		timeHighScore +
+		"<p id=enterInitials>Enter initials:<input type='text' name='initials' id='initials'></input><button type=button ><p>";
+}
+
+// signUpButton.addEventListener("click", function(event) {
+//     event.preventDefault();
+
+//     var email = document.querySelector("#email").value;
+//     var password = document.querySelector("#password").value;
+
+//     if (email === "") {
+//       displayMessage("error", "Email cannot be blank");
+//     } else if (password === "") {
+//       displayMessage("error", "Password cannot be blank");
+//     } else {
+//       displayMessage("success", "Registered successfully");
+
+//       localStorage.setItem("email", email);
+//       localStorage.setItem("password", password);
+//       renderLastRegistered();
+//     }
+//   });
+
+// This function checks the elements ID of the button chosen, and will return correct or incorrect. Then restarts the startQuestions function.
 function checkAnswer(event) {
-	currentQuestion++;
 	var clickedButtonId = event.target.id;
 	if (clickedButtonId === questions[currentQuestion].answer) {
 		showAnswer.innerHTML = " <hr> Correct!";
 	} else {
 		showAnswer.innerHTML = " <hr> Incorrect!";
 	}
-	startQuestions();
+
+	if (currentQuestion < questions.length - 1) {
+		currentQuestion++;
+		startQuestions();
+	} else {
+		var selectAllButtons = document.querySelectorAll(
+			"#answersContainer button"
+		);
+		for (var i = 0; i < selectAllButtons.length; i++) {
+			selectAllButtons[i].addEventListener("click", recordHighScore);
+		}
+	}
 }
 
 // This function runs the questions and the funciton inside that then runs the button choices:
