@@ -31,13 +31,7 @@ when the user selects the answers - a click event to happen with either correct 
 depending if correct then it is to cycle through the questions by replacing the html.
 also if it is correct a little "correct!" will appear below the question.
 make a function per question, each question replaces the last question when the one priors click event is activated?
-click event / function to reduce the timer by 10 seconds if answered incorrectly. penilty
 also "incorrect" will appear if the player answers a question wrong.
-
-do the timer last
-timer will be a funciton that counts down from 60seconds
-when the timer reaches 0 or all questions are answered - the game is over. score then saved locally.
-when a question is answered wrong then it deducts time off (10sec?)
 
 game over - the time left on the timer gets returned into the players "score".
 the player can then choose to save their score and input their initials.
@@ -47,7 +41,19 @@ There will be a button after submitting your highscore to 'go back' and take the
 
 View Highscores in the top left corner will take you to a page of all the locally stored high scores (showing initials and timer scores).
 
+do the timer last
+timer will be a funciton that counts down from 60seconds
+when the timer reaches 0 or all questions are answered - the game is over. score then saved locally.
+when a question is answered wrong then it deducts time off (10sec?) click event / function to reduce the timer by 10 seconds if answered incorrectly. penilty
+
 # Screenshots:
+
+![Screenshot1](./assets/images-movies/Screenshot%202022-06-06%20150222.jpg)
+![Screenshot2](./assets/images-movies/Screenshot%202022-06-06%20150456.jpg)
+![Screenshot1](./assets/images-movies/Screenshot%202022-06-06%20150513.jpg)
+![Screenshot1](./assets/images-movies/Screenshot%202022-06-06%20150546.jpg)
+![Screenshot1](./assets/images-movies/Screenshot%202022-06-06%20151427.jpg)
+![Screenshot1](./assets/images-movies/Screenshot%202022-06-06%20151448.jpg)
 
 # Links:
 
@@ -80,7 +86,8 @@ Created an event listener to save the score locally when you click "submit".
 Commit 8:
 Created styling on the highscores page in css. The function showHighScores shows the initials on the leaderboard screen. Created the goBack button to refresh the page and takes you back to the start. Created the clearHighscores button to clear the locally stored data. Added the link viewHighScores to navigate to the leaderboard.
 
-to do:
--timer
--clear scoreboard
--store multiple scores on leaderboard in order of lowest time, needs to number them.
+Commit 9:
+I added in the "if" statement on the highscores page so it doesn't show the div of the 1. TEST - 20 if you press the clear score button, by storing those values in a variable and to only run that if their values return true. Changed the text styling to text align left for the buttons.
+
+Commit 10:
+Timer - created a setInterval timer to count down from 75 seconds inside the function called startQuiz. Added in my recordHighScore function a count = count - 10 in the incorrect if/else statement so the count decreases by 10 for each answer is wrong. Fixed up some spelling errors in the questions array. Added screenshots and final checks for the criteria :)

@@ -3,6 +3,7 @@ CSS DIRECTORY
 	1. =MAIN   
 	2. =NAV
     3. =HIGHSCORES
+    4. =TIMER
 */
 
 /*  ===============
@@ -113,4 +114,12 @@ nav a {
 #goBack,
 #clearHighScores {
 	text-align: left;
+}
+
+/*  ===============
+    MAIN 
+    =============== */
+
+#timer {
+	display: flex;
 }

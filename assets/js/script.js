@@ -3,7 +3,10 @@ var startButton = document.getElementById("startButton");
 var viewHighScorePage = document.getElementById("viewHighScores");
 var startPage = document.getElementById("startpage");
 var showAnswer = document.getElementById("showAnswer");
+var showCountDownTimer = document.getElementById("showCountDownTimer");
 var currentQuestion = 0;
+var count = 75;
+var timeHighScore = "";
 
 // This variable holds the questions and their answers:
 var questions = [
@@ -21,11 +24,11 @@ var questions = [
 	{
 		question: "Arrays in JavaScript can be used to store ____.",
 		answer: "all of the above",
-		options: ["all of the above", "numbers and strings", "booleans"],
+		options: ["numbers and strings", "booleans", "all of the above"],
 	},
 	{
 		question:
-			"Strong values must be enclosed within ____ when being assigned to variables",
+			"String values must be enclosed within ____ when being assigned to variables",
 		answer: "quotes",
 		options: ["quotes", "commas", "curly brackets", "paranthesis"],
 	},
@@ -38,7 +41,7 @@ var questions = [
 ];
 
 // This event listener triggers the start of all the functions and events to this site:
-startButton.addEventListener("click", startQuestions);
+startButton.addEventListener("click", startQuiz);
 viewHighScores.addEventListener("click", showHighScores);
 
 function showHighScores() {
@@ -67,10 +70,9 @@ function showHighScores() {
 	}
 }
 
-// I NEED TO CREATE A VARIABLE THAT STORE THE REMAINING TIMER TO PUT INTO THE RECORDhIGHsCCORE FUNCTION// timeHighScore variable
 // This event function is called when there are no more questions remaining - this will stop the timer and turn that into the score. The player can then store their high score:
 function recordHighScore() {
-	var timeHighScore = "20";
+	showAnswer.innerHTML = " ";
 	startPage.innerHTML =
 		"<h1 class=allDone> All Done! <p class=allDone id=finalScore> Your final score is " +
 		timeHighScore +
@@ -94,23 +96,29 @@ function checkAnswer(event) {
 		showAnswer.innerHTML = " <hr> Correct!";
 	} else {
 		showAnswer.innerHTML = " <hr> Incorrect!";
+		count = count - 10;
 	}
-
 	if (currentQuestion < questions.length - 1) {
 		currentQuestion++;
 		startQuestions();
 	} else {
-		var selectAllButtons = document.querySelectorAll(
-			"#answersContainer button"
-		);
-		for (var i = 0; i < selectAllButtons.length; i++) {
-			recordHighScore(selectAllButtons[i]);
-		}
-		showAnswer.innerHTML = "";
+		recordHighScore();
 	}
 }
 
 // This function runs the questions and the funciton inside that then runs the button choices:
+function startQuiz() {
+	var timer = setInterval(function () {
+		showCountDownTimer.innerHTML = count--;
+		if (count === 0 || currentQuestion === questions.length - 1) {
+			timeHighScore = count + 1;
+			recordHighScore();
+			clearInterval(timer);
+		}
+	}, 1000);
+	startQuestions();
+}
+
 function startQuestions() {
 	startPage.innerHTML =
 		"<h1 id=askingQuestion>" +
