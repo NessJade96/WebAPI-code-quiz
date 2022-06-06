@@ -51,8 +51,8 @@ View Highscores in the top left corner will take you to a page of all the locall
 
 # Links:
 
-GitHub:
-Deploy:
+GitHub: https://github.com/NessJade96/WebAPI-code-quiz
+Deploy: https://nessjade96.github.io/WebAPI-code-quiz/
 
 # Commit notes:
 

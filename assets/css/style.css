@@ -109,3 +109,8 @@ nav a {
 #leaderBoard h1 {
 	padding: 1rem 0;
 }
+
+#goBack,
+#clearHighScores {
+	text-align: left;
+}

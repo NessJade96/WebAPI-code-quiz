@@ -44,16 +44,26 @@ viewHighScores.addEventListener("click", showHighScores);
 function showHighScores() {
 	var leaderboardInitials = localStorage.getItem("initials");
 	var leaderboardScore = localStorage.getItem("timeHighScore");
+	var highScores = "";
+
+	if (leaderboardInitials && leaderboardScore) {
+		highScores =
+			"<div id='highscorePage'>1. " +
+			leaderboardInitials +
+			" - " +
+			leaderboardScore +
+			"</div>";
+	}
+
 	startPage.innerHTML =
-		"<article id='leaderBoard'><h1>Highscores</h1> <div id='highscorePage'>" +
-		leaderboardInitials +
-		leaderboardScore +
-		"</div><button type='button' name='goBack' id='goBack' onClick='window.location.reload();'>Go Back</button> <button type='button' name='clearHighscores' id='clearHighScores'>Clear Highscores</button></article>";
+		"<article id='leaderBoard'><h1>Highscores</h1>" +
+		highScores +
+		"<button type='button' name='goBack' id='goBack' onClick='window.location.reload();'>Go Back</button> <button type='button' name='clearHighscores' id='clearHighScores'>Clear Highscores</button></article>";
 	var clearHighScores = document.getElementById("clearHighScores");
 	clearHighScores.addEventListener("click", clearHighScoreTable);
 	function clearHighScoreTable() {
 		localStorage.clear();
-		showHighScores;
+		showHighScores();
 	}
 }
 
